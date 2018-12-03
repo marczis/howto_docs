@@ -87,3 +87,11 @@ Last but not least, you can resort to other methods to obtain the info that SSL 
 
 
 From: https://security.stackexchange.com/questions/20803/how-does-ssl-tls-work
+
+# Checking KEYs
+
+```
+openssl rsa -noout -modulus -in <SERVER>.key | openssl md5
+openssl req -noout -modulus -in <SERVER>.csr | openssl md5
+openssl x509 -noout -modulus -in <SERVER>.cer | openssl md5
+```
